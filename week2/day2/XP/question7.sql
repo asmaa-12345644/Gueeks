@@ -1,0 +1,1 @@
+--When a film is deleted in new_film, all associated reviews in customer_review are automatically deleted as well.
