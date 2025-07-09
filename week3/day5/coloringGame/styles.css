@@ -1,0 +1,53 @@
+body{
+    background-color: darkgrey;
+    display:flex
+    
+}
+p{
+    font-weight: bold;
+    font-size: 21px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.cp {
+    width: 18%;
+    border: 1px black solid;
+    border-radius: 9px;
+    background-color: aliceblue;
+    height:10%;
+}
+
+.coleurs {
+    width:100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+    gap:3px;
+}
+
+
+.item {
+    border: 1px black solid;
+    padding: 35px;
+    margin-top: 5px;
+}
+
+
+.ensemble {
+    width: 82%;
+    height: 98vh;
+    display: grid;
+    grid-template-columns: repeat(70, 1fr);
+    background-color: white;
+    margin-left: 5px;
+}
+
+
+.pixel {
+    background-color: white;
+    border: 1px solid rgb(201, 196, 196);
+    width: 100%;
+}
+
+
+    
