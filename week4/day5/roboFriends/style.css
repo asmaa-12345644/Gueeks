@@ -1,0 +1,78 @@
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-image: url('images/circuitPattern.png');
+    background-color: rgb(83, 21, 83);
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size:28px;
+    letter-spacing: 3px;
+    color: #4157e5;
+    text-align: left;
+    margin:10px 10px 1px 5px;
+    font-family:"SEGA LOGO FONT",sans-serif;
+    
+  }
+
+  #up {background-color:lightgreen;
+    width: 100%;               
+    height: 50px;              
+    position: fixed;          
+    top: 0;                    
+    left: 0; 
+    z-index: 1000; }
+  
+  #searchBox {
+    width: 500px;
+    padding: 10px;
+    font-size: 1em;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    border: none;
+    position: fixed;          
+    top: 5px;  
+    left:20em;     
+    background-color: rgb(206, 210, 215);  
+    
+  }
+  
+  #robotContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 80px;
+  }
+  
+  .robot-card {
+    background-color: #2f2f2f;
+    border: 2px solid #00e6e6;
+    border-radius: 15px;
+    padding: 25px;
+    width: 200px;
+    box-shadow: 0 4px 10px rgba(0, 230, 230, 0.3);
+    transition: transform 0.4s;
+  }
+  
+  .robot-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .robot-card img {
+    width: 100%;
+    border-radius: 50%;
+  }
+  
+  .robot-card h2 {
+    margin: 10px 0 5px;
+    color: #00e6e6;
+  }
+  
+  .robot-card p {
+    font-size: 0.9em;
+    margin: 1px 0;
+  }
+  

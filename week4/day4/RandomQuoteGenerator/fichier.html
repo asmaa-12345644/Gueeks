@@ -3,35 +3,234 @@
     <title>Random Quote Generator</title>
     <meta charset="UTF-8">
     <style> 
-      body {
-        background-color: rgb(174, 135, 135);
-        text-align: center;
-      }
-      input[type="submit"] {
-        background-color: rgb(37, 172, 37);
-        color: white;
-        border: rgb(92, 195, 230) 4px solid;
-        margin-top: 20px;
-        padding: 15px 20px;
-        font-size: 20px;
-        cursor: pointer;
-      }
-      section {
-        width: 50%;
-        margin: 60px auto;
-        font-size: 18px;
-      }
-      .quote-id {
-        font-weight: bold;
-        margin-bottom: 10px;
-      }
-    </style> 
+          * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          }
+
+          body {
+            background-color: #9c8181;
+            text-align: center;
+            padding: 40px 20px;
+            color: #333;
+          }
+
+          input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            margin-top: 20px;
+            padding: 14px 24px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+          }
+
+          input[type="submit"]:hover {
+            background-color: #218838;
+            animation: zoom-in-out 1s ease;
+          }
+
+          section#quote{
+            width: 80%;
+            margin: 30px auto;
+            background-color: rgb(237, 234, 234);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            font-size: 20px;
+            line-height: 1.6;
+          }
+
+          firstform{
+            width: 80%;
+            margin: 40px auto;
+            background-color: rgb(237, 234, 234);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+          }
+
+          .first {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+          }
+
+          .first input {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 6px;
+            width: 220px;
+          }
+
+          #monBouton {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+          }
+
+          #monBouton:hover {
+            background-color: #0056b3;
+          }
+
+          .maStyle {
+            background-color: #6c757d;
+            color: white;
+            font-weight: bold;
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-size: 15px;
+            margin: 5px 5px;
+            border: none;
+            transition: background-color 0.3s ease;
+          }
+
+          .maStyle:hover {
+            background-color: #5a6268;
+          }
+
+          #search {
+            color:green;
+            border-color:green;
+            font-weight: bold;
+            font-size: 15px;
+            padding: 8px 19px;
+            background: none;
+
+          }
+
+          #Like{
+            background-color: #ffc107;
+            color: #212529;
+            font-weight: bold;
+            font-size: 15px;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 20px;
+            margin: 10px 5px;
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.8s ease;
+            transform-style: preserve-3d;
+
+          }
+
+          #Like:hover {
+            background-color: #e0a800;
+            color: white;
+
+          }
+           #Like:active {
+            transform: translateZ(40px) scale(1.1);
+          }
+          
+
+          @keyframes zoom-in-out {
+            0%   { transform: translateZ(0px) scale(1); }
+            50%  { transform: translateZ(40px) scale(1.1); }
+            100% { transform: translateZ(0px) scale(1); }
+          }
+                    
+          .filter-form input {
+            width: 300px;
+            padding: 10px;
+            border-radius: 6px;
+            border: none;
+            font-size: 16px;
+            margin-right: 10px;
+          }
+          .filter-form button {
+            perspective: 600px;
+            padding: 10px 20px;
+            border: 1px solid #28a745;
+            background-color: transparent;
+            color: #28a745;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+          }
+           .filter-form button:hover {
+            background-color: #28a745;
+            color: white;
+          }
+          
+          #prevBtn {
+            color: red;
+            border-color: red;
+            padding:8px;
+            margin:10px;
+            background: none;
+          }
+
+          #prevBtn:hover {
+            background-color: red;
+            color: white;
+          }
+
+          #nextBtn {
+            color: #007bff;
+            border-color: #007bff;
+            padding:8px;
+            margin:10px;
+            background:none
+          }
+
+          #nextBtn:hover {
+            background-color: #007bff;
+            color: white;
+          }
+
+          #authorFilter{
+            width:79%;
+            height:7%;
+            padding:10px;
+          }
+
+</style>
+
   </head>
   <body>  
 
     <input type="submit" id="generate" value="Generate Quote">
     <section id="quote"></section>
     
+
+    <form id="firstform">
+      <div class="first" >
+          Citation: <input type="text" id="citation" >
+          Auteur: <input type="text" id="auteur">
+          <button type="button" id="monBouton" >Ajoutez</button><br><br>
+      </div> 
+      <div><button type="button" id="nbrCaraAvecEspaces" class="maStyle">Nombre de caractères (avec espace)</button></div>
+      <div><button type="button" id="nbrCaraSansEspaces" class="maStyle">Nombre de caractères (sans espace)</button></div>
+      
+      <div><button type="button" id="nbrMots" class="maStyle">Nombre de mots</button></div>
+      <button type="button" id="Like" style="background-color: rgb(178, 172, 172); border-radius: 10px; padding:10px ;margin:5px">Like</button>
+
+    </form><br><br>
+
+   <section id="searchQuote"></section>
+
+    <form id="filterForm">
+      <input type="text" id="authorFilter" placeholder="Search author...">
+      <button type="button" id="search">Search</button>
+    </form>
+    
+    <button type="button" id="prevBtn"><==Previous</button>----<button type="submit" id="nextBtn">Next==></button>
+     
     <script src="script.js"></script>
   </body>
 </html>
