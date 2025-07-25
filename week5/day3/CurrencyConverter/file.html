@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Currency Converter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-image: url('https://images.pexels.com/photos/4025825/pexels-photo-4025825.jpeg');
+      background-size: cover;
+    }
+
+    .converter {
+      border: 1px solid #dfd9d9;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #e8e5e5;
+    }
+
+    .form-group {
+      margin: 20px;
+    }
+
+    select, input, button {
+      padding: 8px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    .switch-container {
+      display: flex;
+      justify-content: center;
+      margin: 10px 0;
+    }
+
+    .switch-btn {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+    .switch-btn:hover {
+        background-color: #e5eaeb;
+    }
+
+    .switch-icon {
+      width: 50px;
+      height: 50px;
+      transition: transform 0.2s ease;
+    }
+
+    /* Zoom effect on click */
+    .switch-btn:active .switch-icon {
+      transform: scale(1.5);
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align: center; text-decoration: underline;">Currency Converter</h1>
+  <div class="converter">
+    <div class="form-group">
+      <label for="from-currency"><h3 style="text-align: center;">From:</h3></label>
+      <select id="from-currency"></select>
+    </div>
+
+    <div class="switch-container">
+      <button class="switch-btn" id="switch-btn">
+        <img src="switch.png" alt="Switch" class="switch-icon" />
+      </button>
+    </div>
+
+    <div class="form-group">
+      <label for="to-currency"><h3 style="text-align: center;">To:</h3></label>
+      <select id="to-currency"></select>
+    </div>
+
+    <div class="form-group">
+      <label for="amount"><h3 style="text-align: center;">Amount:</h3></label>
+      <div style="display: flex; width: 100%; margin: 10px; gap: 12px">
+        <input type="number" id="amount" value="1" min="0" />
+        <button id="convert-btn">Convert</button>
+      </div>
+    </div>
+
+    <div class="result" id="result"></div>
+  </div>
+  <script src="source.js"></script>
+</body>
+</html>
